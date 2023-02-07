@@ -1,0 +1,31 @@
+/* ============================= */
+/* hero */
+/* ============================= */
+
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    background: linear-gradient(160deg, var(--clr-grey-8) 30%, var(--clr-grey-9) 50%);
+    border-radius: var(--radius-out);
+}
+
+
+.hero-info h1 {
+    text-transform: none;
+    max-width: 35em;
+}
+
+.hero-info p {
+    max-width: 35em;
+    line-height: 1.8;
+}
+
+.hero-images {
+    display: none;
+}

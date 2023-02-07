@@ -1,0 +1,57 @@
+/* 
+====== 
+Cocktail
+======
+*/
+
+/* .cocktail {
+    text-align: center;
+} */
+
+.drink {
+    width: var(--smallWidth);
+    max-width: var(--fullWidth);
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.drink img {
+    border: none;
+    border-radius: var(--radius-out);
+    height: 50vh;
+}
+
+.drink p {
+    font-weight: bold;
+    text-transform: capitalize;
+    line-height: 1.8;
+}
+
+/* .drink span {
+    margin-right: 0.5rem;
+} */
+
+.drink-data {
+    /* background: var(--primaryLightColor); */
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--mainBorderRadius);
+    color: var(--primaryColor);
+}
+
+.drink-info {
+    padding-top: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+    .drink {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .drink-info {
+        padding-top: 0;
+    }
+}

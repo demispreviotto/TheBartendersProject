@@ -1,0 +1,38 @@
+/* 
+====================
+CocktailsSlider
+==================== 
+*/
+
+
+.slider {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 0.5rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slide-card {
+    display: flex;
+    flex-direction: row;
+    height: 30.5vh;
+    width: 500px;
+    border-radius: var(--radius-out);
+    border: var(--border-white);
+    box-shadow: var(--boxShadow);
+    margin: 0.5rem 0;
+}
+
+.slide-card img {
+    height: 100%;
+    width: auto;
+    border-radius: var(--radius-out) 0 0 var(--radius-out);
+}

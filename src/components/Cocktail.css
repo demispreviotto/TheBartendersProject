@@ -1,0 +1,68 @@
+/* 
+====== 
+Cocktail 
+======
+*/
+
+.cocktail {
+    background: var(--mainWhite);
+    border: var(--border-white);
+    box-shadow: var(--boxShadow);
+    transition: var(--mainTransition);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: var(--radius-out);
+}
+
+.cocktail:hover {
+    box-shadow: var(--darkShadow);
+}
+
+.cocktail img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-mid) var(--radius-mid) 0 0;
+}
+
+.cocktail-footer {
+    padding: 1.5rem;
+}
+
+.cocktail-footer h3,
+.cocktail-footer h4,
+.cocktail-footer p {
+    margin-bottom: 0.3rem;
+}
+
+.cocktail-footer h3 {
+    font-size: 2rem;
+}
+
+.cocktail-footer p {
+    color: var(--darkGrey);
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+    .cocktail {
+        display: flex;
+        flex-direction: row;
+        height: 30.5vh;
+        border-radius: var(--radius-out);
+    }
+
+    .cocktail img {
+        height: 100%;
+        width: auto;
+        border-radius: var(--radius-out) 0 0 var(--radius-out);
+    }
+
+    .cocktail-footer {
+        padding: .5rem;
+    }
+
+    .cocktail-footer h3 {
+        font-size: 1.5rem;
+    }
+    
+}

@@ -1,0 +1,193 @@
+/*--------- Website Theme ---------*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(0, 86%, 17%);
+  --clr-primary-2: hsl(0, 77%, 27%);
+  --clr-primary-3: hsl(0, 72%, 37%);
+  --clr-primary-4: hsl(0, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(0, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(0, 89%, 70%);
+  --clr-primary-7: hsl(0, 90%, 76%);
+  --clr-primary-8: hsl(0, 86%, 81%);
+  --clr-primary-9: hsl(0, 90%, 88%);
+  --clr-primary-10: hsl(0, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 0%, 16%);
+  --clr-grey-2: hsl(211, 0%, 23%);
+  --clr-grey-3: hsl(209, 0%, 30%);
+  --clr-grey-4: hsl(209, 0%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 0%, 49%);
+  --clr-grey-6: hsl(209, 0%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 0%, 80%);
+  --clr-grey-9: hsl(212, 0%, 89%);
+  --clr-grey-10: hsl(210, 0%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  /* other */
+  --border-white: 1px solid var(--clr-grey-9);
+  --border-balck: 1px solid var(--clr-grey-1);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius-out: 0.5rem;
+  --radius-mid: 0.25rem;
+  --radius-in: 0.12rem;
+  --boxShadow: 1px 1px 15px 1px var(--clr-grey-9);
+  --lightShadow: 0 0 6px 0 rgba(29, 29, 29, 0.2);
+  --darkShadow: 0 0 6px 0 rgba(29, 29, 29, 0.4);
+  --boxInsetShadow: inset 1px 1px 15px 1px var(--clr-grey-9);
+  --lightInsetShadow: inset 0 0 5px 0 rgba(29, 29, 29, 0.2);
+  --darkInsetShadow: inset 0 0 5px 0 rgba(29, 29, 29, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+body.stopScrolling{
+  height: 100%;
+  overflow: hidden;
+}
+
+::selection {
+  background-color: var(--clr-primary-3);
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-mid);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: capitalize;
+}
+.btn:hover {
+    box-shadow: var(--boxShadow);
+}
+.primary-btn {
+  border: var(--border-balck);
+  color: white;
+  background: var(--clr-black);
+}
+.primary-btn:hover {
+    box-shadow: var(--boxShadow);
+}
+
+.secondary-btn {
+  border: 1px solid var(--clr-grey-8);
+  color: var(--clr-black);
+  background: var(--clr-white);
+}
+
+.secondary-btn:hover {
+  box-shadow: 1px 1px 10px var(--clr-grey-7);
+}
+
+/*  global classes */
+
+.section {
+  margin: 0 auto;
+  padding: 0 10vw;
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  margin: 2rem;
+}
+
+.container {
+  background-color: var(--clr-grey-10);
+  border-radius: var(--radius-out);
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: var(--boxShadow);
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    padding: 0 5vw;
+  }
+}
+
+
