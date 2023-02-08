@@ -52,8 +52,8 @@ Variables
   --lightShadow: 0 0 6px 0 rgba(29, 29, 29, 0.2);
   --darkShadow: 0 0 6px 0 rgba(29, 29, 29, 0.4);
   --boxInsetShadow: inset 1px 1px 15px 1px var(--clr-grey-9);
-  --lightInsetShadow: inset 0 0 5px 0 rgba(29, 29, 29, 0.2);
-  --darkInsetShadow: inset 0 0 5px 0 rgba(29, 29, 29, 0.4);
+  --lightInsetShadow: inset 1px 1px 6px 1px var(--clr-grey-9);
+  --darkInsetShadow: inset 1px 1px 12px 1px var(--clr-grey-9);
   --max-width: 1170px;
   --fixed-width: 620px;
 }
@@ -172,6 +172,7 @@ p {
 .section-title {
   font-size: 2rem;
   text-transform: capitalize;
+  text-align: center;
   letter-spacing: var(--spacing);
   margin: 2rem;
 }

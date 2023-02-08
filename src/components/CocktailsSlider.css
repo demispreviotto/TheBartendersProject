@@ -24,7 +24,7 @@ CocktailsSlider
     display: flex;
     flex-direction: row;
     height: 30.5vh;
-    width: 500px;
+    width: 450px;
     border-radius: var(--radius-out);
     border: var(--border-white);
     box-shadow: var(--boxShadow);
@@ -35,4 +35,10 @@ CocktailsSlider
     height: 100%;
     width: auto;
     border-radius: var(--radius-out) 0 0 var(--radius-out);
+}
+
+@media screen and (max-width: 800px) {
+    .slide-card {
+        width: 100%;
+    }
 }

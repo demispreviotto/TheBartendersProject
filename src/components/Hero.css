@@ -9,7 +9,7 @@
     position: relative;
     justify-items: center;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     padding: 2rem;
     background: linear-gradient(160deg, var(--clr-grey-8) 30%, var(--clr-grey-9) 50%);
     border-radius: var(--radius-out);
@@ -28,4 +28,10 @@
 
 .hero-images {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .hero {
+        text-align: center;
+    }
 }

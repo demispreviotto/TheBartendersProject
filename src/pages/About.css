@@ -1,0 +1,24 @@
+.about-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.about-container img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .about-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1em;
+    }
+
+    .about-container img {
+        width: 100%;
+        height: auto;
+    }
+}
