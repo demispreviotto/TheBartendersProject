@@ -1,24 +1,12 @@
 /* 
 ====== 
-Form
+Shop Search
 ======
 */
 
 .search {
     margin-top: 1rem;
     padding-bottom: 0;
-}
-
-.search-form {
-    width: var(--smallWidth);
-    margin: 0 auto;
-    max-width: var(--maxWidth);
-    padding: 2rem 2rem;
-    text-transform: capitalize;
-    background: var(--mainWhite);
-    border: var(--border-white);
-    border-radius: var(--radius-out);
-    box-shadow: var(--boxShadow);
 }
 
 .form-input {
@@ -31,7 +19,6 @@ Form
     box-shadow: var(--lightInsetShadow);
     font-family: inherit;
     color: var(--clr-grey-3);
-    /* outline: none; */
     transition: 0.3s;
 }
 
@@ -51,14 +38,6 @@ Form
 }
 
 @media screen and (max-width: 800px) {
-    .search-form {
-        background: none;
-        border: none;
-        border-radius: none;
-        box-shadow: none;
-        padding: .5rem 1rem;
-    }
-
     .form-input {
         border-radius: var(--radius-out);
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import './Projects.css'
 
 const Projects = () => {
 
@@ -14,7 +15,7 @@ const Projects = () => {
                         </div>
                         <div className="images">
                             <img className="showImage" src="./assets/img/port1.jpg" alt="" />
-                            <img src="./assets/img/port2.png" alt="" />
+                            <img src="./assets/img/bartender1.jpg" alt="" />
                             <img src="./assets/img/port3.jpg" alt="" />
                             <img src="./assets/img/port4.png" alt="" />
                             <img src="./assets/img/port5.png" alt="" />

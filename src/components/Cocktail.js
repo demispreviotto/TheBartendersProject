@@ -3,6 +3,7 @@ import './Cocktail.css'
 import { Link } from 'react-router-dom'
 
 const Cocktail = ({ image, name, id, info, glass }) => {
+  
   return (
     <article className='cocktail'>
         <div className="img-container">

@@ -41,8 +41,8 @@ Variables
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
   /* other */
-  --border-white: 1px solid var(--clr-grey-9);
-  --border-balck: 1px solid var(--clr-grey-1);
+  --border-white: 1px solid var(--clr-grey-8);
+  --border-balck: 1px solid var(--clr-grey-2);
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius-out: 0.5rem;
@@ -84,7 +84,8 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
-body.stopScrolling{
+
+body.stopScrolling {
   height: 100%;
   overflow: hidden;
 }
@@ -141,16 +142,19 @@ p {
   transition: var(--transition);
   text-transform: capitalize;
 }
+
 .btn:hover {
-    box-shadow: var(--boxShadow);
+  box-shadow: var(--boxShadow);
 }
+
 .primary-btn {
   border: var(--border-balck);
   color: white;
   background: var(--clr-black);
 }
+
 .primary-btn:hover {
-    box-shadow: var(--boxShadow);
+  box-shadow: var(--boxShadow);
 }
 
 .secondary-btn {
@@ -167,8 +171,9 @@ p {
 
 .section {
   margin: 0 auto;
-  padding: 0 10vw;
+  padding: 0 5vw;
 }
+
 .section-title {
   font-size: 2rem;
   text-transform: capitalize;
@@ -179,16 +184,20 @@ p {
 
 .container {
   background-color: var(--clr-grey-10);
+  border: var(--border-white);
   border-radius: var(--radius-out);
   padding: 1rem;
   margin: 1rem 0;
   box-shadow: var(--boxShadow);
 }
 
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 0 10vw;
+  }
+}
 @media screen and (max-width: 800px) {
   .section {
     padding: 0 5vw;
   }
 }
-
-
