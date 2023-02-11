@@ -2,10 +2,12 @@ import React from 'react';
 import './Cocktail.css'
 import { Link } from 'react-router-dom'
 
-const Cocktail = ({ image, name, id, info, glass }) => {
+const Cocktail = ({ image, name, id, info, glass, modifier }) => {
   
+  const containerClass = `cocktail ${modifier ? modifier : ''}`;
+
   return (
-    <article className='cocktail'>
+    <article className={containerClass}>
         <div className="img-container">
           <img src={image} alt={name} />
         </div>

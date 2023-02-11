@@ -1,8 +1,9 @@
 import React from 'react';
 import './CocktailsSlider.css'
 import Loading from './Loading'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../context';
+import Cocktail from './Cocktail';
 
 const CocktailsSlider = () => {
     const { cocktails, loading } = useGlobalContext();
@@ -42,17 +43,18 @@ const CocktailsSlider = () => {
                 {randomObjects.map((item) => {
                     const { image, name, id, info, glass } = item;
                     return (
-                        <div className="slide-card" key={id}>
-                            <div className="img-container">
-                                <img src={image} alt={name} />
-                            </div>
-                            <div className="cocktail-footer">
-                                <h3>{name}</h3>
-                                <h4>{glass}</h4>
-                                <p>{info}</p>
-                                <Link to={`/cocktail/${id}`} className='btn primary-btn'>detail</Link>
-                            </div>
-                        </div>
+                        // <div className="slide-card" key={id}>
+                        //     <div className="img-container">
+                        //         <img src={image} alt={name} />
+                        //     </div>
+                        //     <div className="cocktail-footer">
+                        //         <h3>{name}</h3>
+                        //         <h4>{glass}</h4>
+                        //         <p>{info}</p>
+                        //         <Link to={`/cocktail/${id}`} className='btn primary-btn'>detail</Link>
+                        //     </div>
+                        // </div>
+                        <Cocktail image={image} name={name} glass={glass} info={info} key={id} id={id} modifier='horizontal'/>
                     )
                 })}
             </div>

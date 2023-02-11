@@ -43,6 +43,24 @@ Cocktail
     margin-bottom: 0.5rem;
 }
 
+.cocktail.horizontal {
+    display: flex;
+    flex-direction: row;
+    height: 30.5vh;
+    width: 450px;
+    border-radius: var(--radius-out);
+    border: var(--border-white);
+    box-shadow: var(--boxShadow);
+    margin: 0.5rem 0;
+}
+
+.cocktail.horizontal img {
+    height: 100%;
+    width: auto;
+    border-radius: var(--radius-out) 0 0 var(--radius-out);
+}
+
+
 @media screen and (max-width: 800px) {
     .cocktail {
         display: flex;
@@ -63,6 +81,10 @@ Cocktail
 
     .cocktail-footer h3 {
         font-size: 1.5rem;
+    }
+
+    .cocktail.horizontal {
+        width: 100%;
     }
     
 }

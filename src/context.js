@@ -70,7 +70,7 @@ const AppProvider = ({ children }) => {
                                     id: uId,
                                     title: product,
                                     price: 9.99,
-                                    img: `www.thecocktaildb.com/images/ingredients/${product.toLowerCase()}.png`,
+                                    img: `https://thecocktaildb.com/images/ingredients/${product.toLowerCase()}.png`,
                                     amount: 0,
                                 });
                             }
