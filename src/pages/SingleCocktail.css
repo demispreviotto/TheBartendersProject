@@ -7,7 +7,7 @@ Cocktail
 .drink {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    gap: 3rem;
+    gap: 1rem;
     align-items: center;
     margin-top: 1.5em;
 }
@@ -28,6 +28,14 @@ Cocktail
     padding: 0.25rem 0.5rem;
     border-radius: var(--mainBorderRadius);
     color: var(--primaryColor);
+}
+
+.drink-info {
+    box-shadow: var(--boxShadow);
+    border: var(--border-white);
+    /* padding-top: 0; */
+    padding: .75em;
+    margin-top: 0.5em;
 }
 
 @media screen and (max-width: 800px) {

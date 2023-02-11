@@ -1,6 +1,7 @@
 import React from 'react'
 import './SingleCocktail.css'
 import Loading from '../components/Loading'
+import CocktailsSlider from '../components/CocktailsSlider'
 import { useParams, Link } from 'react-router-dom'
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
@@ -126,7 +127,7 @@ const SingleCocktail = () => {
             <span className='drink-data'>ingredients:</span>
             <ul>
               {measures.map((item, index) => {
-                return item ? <li><span key={index}>
+                return item.a ? <li><span key={index}>
                   {item.a} - {item.b}</span></li> : null;
               })}
             </ul>
@@ -137,6 +138,7 @@ const SingleCocktail = () => {
         </div>
           <Link to='/' className='btn primary-btn'>back home</Link>
       </div>
+      <CocktailsSlider/>
       {/* </div> */}
     </section>
   )
