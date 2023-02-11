@@ -1,17 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useCallback } from 'react'
-import bottle1 from './assets/img/bottle1.jpeg'
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-    
+
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('a');
     const [cocktails, setCocktails] = useState([]);
     const [products, setProducts] = useState([]);
-
+    
     const fetchDrinks = useCallback(async () => {
         setLoading(true);
         try {
@@ -60,25 +59,25 @@ const AppProvider = ({ children }) => {
                 for (let i = 0; i < drinks.length; i++) {
                     let drink = drinks[i];
                     let productProperties = ['strIngredient1', 'strIngredient2', 'strIngredient3', 'strIngredient4', 'strIngredient5'];
-                    
+
                     for (let j = 0; j < productProperties.length; j++) {
                         let product = drink[productProperties[j]];
-                        if (product){
-                            const existingProduct = newProducts.find(p=> p.title === product);
-                            if(!existingProduct){
+                        if (product) {
+                            const existingProduct = newProducts.find(p => p.title === product);
+                            if (!existingProduct) {
                                 uId++;
                                 newProducts.push({
                                     id: uId,
                                     title: product,
                                     price: 9.99,
-                                    img: bottle1,
+                                    img: `www.thecocktaildb.com/images/ingredients/${product.toLowerCase()}.png`,
                                     amount: 0,
                                 });
                             }
                         }
                     }
                 }
-                console.log(newProducts);
+                // console.log(newProducts);
                 setProducts(newProducts)
             } else {
                 setProducts(null)

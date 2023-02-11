@@ -188,7 +188,7 @@ p {
   border-radius: var(--radius-out);
   padding: 1rem;
   margin: 1rem 0;
-  box-shadow: var(--boxShadow);
+  /* box-shadow: var(--boxShadow); */
 }
 
 @media screen and (min-width: 1440px) {

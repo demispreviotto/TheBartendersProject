@@ -42,7 +42,7 @@ const CocktailsSlider = () => {
                 {randomObjects.map((item) => {
                     const { image, name, id, info, glass } = item;
                     return (
-                        <div className="slide-card">
+                        <div className="slide-card" key={id}>
                             <div className="img-container">
                                 <img src={image} alt={name} />
                             </div>

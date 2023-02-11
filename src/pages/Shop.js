@@ -10,8 +10,8 @@ const Projects = () => {
     return (
         <section className="portfolio section" id="portfolio">
             <div>
-                <h1 className="section-title">Shop</h1>
-                <div className="modal">
+                {/* <h1 className="section-title">Shop</h1> */}
+                {/* <div className="modal">
                     <div className="modal-overlay"></div>
                     <div className="slider-wrap">
                         <div className="prev-btn navigation">
@@ -29,12 +29,12 @@ const Projects = () => {
                             <i className="uil uil-angle-right-b">d</i>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="container">
                     <div className="portfolio-header">
                         <div className="portfolio-title">
                             {/* <h3 className="sub-heading">Portfolio</h3> */}
-                            <h1 className="heading">Latest Proyects</h1>
+                            <h1 className="heading">Bodega</h1>
                         </div>
                         <div>
                         <ShopSearch />

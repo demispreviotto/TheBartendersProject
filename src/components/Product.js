@@ -7,16 +7,15 @@ import './Product.css'
 
 const Products = ({ img, title, price, amount  }) => {
     // const { toggleAmount } = useGlobalContext();
-    // console.log(name, price)
     return (
         // <section className='section'>
         <article className="product-card">
             <div className="product-img">
                 <img src={img} alt={title} />
             </div>
-            <div className="drink-info">
-                <h2>{title}</h2>
-                <h3>${price}</h3>
+            <div className="product-info">
+                <h3>{title}</h3>
+                <h4>${price}</h4>
             </div>
             {/* <div>
                 <div>

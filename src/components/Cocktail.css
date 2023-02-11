@@ -7,7 +7,7 @@ Cocktail
 .cocktail {
     background: var(--mainWhite);
     border: var(--border-white);
-    box-shadow: var(--boxShadow);
+    /* box-shadow: var(--boxShadow); */
     transition: var(--mainTransition);
     display: grid;
     grid-template-rows: auto 1fr;
