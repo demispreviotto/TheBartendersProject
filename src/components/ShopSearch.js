@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import './ShopSearch.css'
 import { useGlobalContext } from '../context';
 
 const ShopSearch = () => {
   const { setSearchTerm } = useGlobalContext()
-  const searchValue = React.useRef('');
+  const searchValue = useRef('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     searchValue.current.focus()
   }, [])
 
-  const searchCocktail = () => {
+  const searchProduct = () => {
     setSearchTerm(searchValue.current.value)
   }
 
@@ -22,14 +22,13 @@ const ShopSearch = () => {
     <>
       <form className="" onSubmit={handleSubmit}>
         <div className="search-form-control">
-          {/* <label htmlFor="name">search your favorite cocktail</label> */}
           <input
             className='form-input'
             type="text"
             id='name'
             placeholder='search your favorite cocktail'
             ref={searchValue}
-            onChange={searchCocktail}
+            onChange={searchProduct}
           />
         </div>
       </form>

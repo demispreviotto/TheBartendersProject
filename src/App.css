@@ -134,6 +134,10 @@ p {
   color: var(--clr-grey-5);
 }
 
+hr {
+  margin: 1em 0;
+}
+
 .btn {
   font-size: 1rem;
   padding: 0.25rem 0.75rem;
@@ -141,6 +145,8 @@ p {
   cursor: pointer;
   transition: var(--transition);
   text-transform: capitalize;
+  min-width: 5em;
+  margin: .5em;
 }
 
 .btn:hover {

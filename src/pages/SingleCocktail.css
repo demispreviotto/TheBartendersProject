@@ -9,19 +9,25 @@ Cocktail
     grid-template-columns: 2fr 3fr;
     gap: 1rem;
     align-items: center;
-    margin-top: 1.5em;
+    margin: 1em 0;
 }
 
 .drink img {
     border: none;
     border-radius: var(--radius-out);
-    height: 50vh;
+    width: 50vh;
 }
 
-.drink p {
-    font-weight: bold;
+.drink p,
+li {
+    font-weight: lighter;
     text-transform: capitalize;
-    line-height: 1.8;
+    line-height: 1;
+    color: var(--clr-grey-5);
+}
+
+.drink h4 {
+    margin-bottom: 0;
 }
 
 .drink-data {
@@ -33,9 +39,15 @@ Cocktail
 .drink-info {
     box-shadow: var(--boxShadow);
     border: var(--border-white);
-    /* padding-top: 0; */
+    height: 100%;
     padding: .75em;
     margin-top: 0.5em;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: row;
+    gap: 0 .5em;
 }
 
 @media screen and (max-width: 800px) {
@@ -46,7 +58,7 @@ Cocktail
         text-align: left;
         margin-top: .5em;
     }
-    
+
     .drink-info {
         box-shadow: var(--boxShadow);
         border: var(--border-white);
@@ -54,8 +66,20 @@ Cocktail
         padding: .75em;
         margin-top: 0.5em;
     }
+
     .drink img {
-            width: 100%;
-            height: auto;
-        }
+        width: 100%;
+        height: auto;
+    }
+    .cart-items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em
+        ;
+
+    }
+    .product-card{
+        width: 45%;
+    }
 }

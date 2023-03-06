@@ -1,5 +1,5 @@
 import React from 'react'
-import CocktailsList from '../components/CocktaislList'
+import CocktailsList from '../components/CocktailsList'
 import SearchForm from '../components/SearchForm'
 
 const Recipes = () => {

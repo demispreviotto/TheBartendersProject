@@ -4,14 +4,9 @@ Shop Search
 ======
 */
 
-.search {
-    margin-top: 1rem;
-    padding-bottom: 0;
-}
-
 .form-input {
     display: inline-block;
-    padding: 0.9rem 1.5rem;
+    /* padding: 0.9rem 1.5rem; */
     font-size: 1.2rem;
     width: 100%;
     border: var(--border-white);
@@ -28,13 +23,6 @@ Shop Search
 
 .form-input:hover {
     filter: brightness(97%);
-}
-
-.form-input:valid,
-.form-input:focus {
-    filter: brightness(100%);
-    background: var(--clr-grey-10);
-    border: var(--border-white);
 }
 
 @media screen and (max-width: 800px) {

@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useRef} from 'react';
 import './SearchForm.css'
+// import reducer from '../reducer';
 import { useGlobalContext } from '../context';
 
 const SearchForm = () => {
-  const { setSearchTerm } = useGlobalContext()
-  const searchValue = React.useRef('');
+  // const { setSearchTerm } = useGlobalContext();
+  const { searchCocktail } = useGlobalContext();
+  const searchValue = useRef('');
 
-  React.useEffect(() => {
-    searchValue.current.focus()
-  }, [])
+  // useEffect(() => {
+  //   searchValue.current.focus()
+  // }, [])
 
-  const searchCocktail = () => {
-    setSearchTerm(searchValue.current.value)
-  }
+  // const searchCocktail = () => {
+  //   setSearchTerm(searchValue.current.value);
+  //   // dispatch({type:SEARCHFORM, payload: searchValue.current.value})
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,7 +25,6 @@ const SearchForm = () => {
     <section className='search'>
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="search-form-control">
-          {/* <label htmlFor="name">search your favorite cocktail</label> */}
           <input
             className='form-input'
             type="text"

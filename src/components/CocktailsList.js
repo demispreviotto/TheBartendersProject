@@ -4,7 +4,7 @@ import Cocktail from './Cocktail'
 import Loading from './Loading'
 import { useGlobalContext } from '../context'
 
-const CocktaislList = () => {
+const CocktailsList = () => {
   const { cocktails, loading } = useGlobalContext();
   // console.log(cocktails);
 
@@ -28,4 +28,4 @@ const CocktaislList = () => {
   )
 }
 
-export default CocktaislList
+export default CocktailsList;

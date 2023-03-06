@@ -1,16 +1,10 @@
-/* ============================= */
-/* hero */
-/* ============================= */
-
-
 .hero {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
     justify-items: center;
     align-items: center;
-    /* justify-content: flex-start; */
     padding: 2rem;
+    margin-top: 1em;
     background: linear-gradient(160deg, var(--clr-grey-8) 30%, var(--clr-grey-9) 50%);
     border-radius: var(--radius-out);
 }
@@ -33,5 +27,6 @@
 @media screen and (max-width: 800px) {
     .hero {
         text-align: center;
+        justify-content: center;
     }
 }

@@ -1,9 +1,3 @@
-/*
-=============== 
-Navbar
-===============
-*/
-
 nav {
     display: flex;
     background: var(--clr-grey-10);
@@ -11,76 +5,100 @@ nav {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(3px);
+    height: 4em;
 }
+
 
 .nav-center {
     width: 90vw;
-    max-width: var(--max-width);
 }
 
 .nav-header {
     display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: space-between;
 }
 
+/* .nav-header a {
+    display: flex;
+    position: relative;
+} */
+
 .nav-toggle {
-    font-size: 1.5rem;
-    color: var(--clr-primary-5);
-    background: transparent;
-    border-color: transparent;
-    transition: var(--transition);
-    cursor: pointer;
+    display: none;
 }
 
-.nav-toggle:hover {
-    color: var(--clr-primary-8);
+.nav-container {
+    display: flex;
+    margin: 0 1em;
+    align-items: center;
+    justify-content: center;
 }
 
-/*=============== nav hamburguer =============== */
-#navMenu>span {
-    display: block;
-    width: 28px;
-    height: 2px;
-    border-radius: 9999px;
-    background-color: black;
+a svg {
+    fill: var(--clr-grey-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#navMenu>span:not(:last-child) {
-    margin-bottom: 7px;
-}
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-#navMenu,
-#navMenu>span {
-    transition: all .3s ease-in-out;
 }
-
-#navMenu.active {
-    transition-delay: 0.6s;
-    transform: rotate(45deg);
-}
-
-#navMenu.active>span:nth-child(2) {
-    width: 0;
-}
-
-#navMenu.active>span:nth-child(1),
-#navMenu.active>span:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-#navMenu.active>span:nth-child(1) {
-    transform: translateY(9px);
-}
-
-#navMenu.active>span:nth-child(3) {
-    transform: translateY(-9px) rotate(90deg);
-}
-
-/* ============== */
 
 .logo {
-    height: 40px;
+    display: inline-flex;
+    height: 3em;
+    width: 3em;
+}
+
+.user {
+    display: flex;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: var(--clr-grey-8);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon {
+    display: inline-flex;
+}
+
+.nav-container .amount-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: -0.75em;
+    right: 0.6em;
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 50%;
+    background: var(--clr-grey-8);
+}
+
+.nav-container .total-amount {
+    color: var(--clr-grey-2);
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+
+.links-container {
+    display: flex;
+    height: auto;
+    background-color: var(--clr-grey-10);
+    transition: var(--transition);
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
 }
 
 .links a {
@@ -92,20 +110,19 @@ nav {
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     padding: 0.5rem 1rem;
-    /* transition: var(--transition); */
     border-bottom: 6px solid transparent;
     border-radius: 0px;
-    min-width: revert;
+    /* min-width: revert; */
 }
 
 .links a::before {
     content: "";
     position: absolute;
     width: 0%;
-    bottom: -2.5px;
+    bottom: .5px;
     left: 50%;
     background-color: var(--clr-grey-8);
-    /* transition: 0.3s ease-in-out; */
+    transition: 0.3s ease-in-out;
 }
 
 .links a:hover::before {
@@ -115,18 +132,21 @@ nav {
 }
 
 .social-icons {
-    display: none;
+    display: flex;
 }
 
-.links-container {
-    height: 0;
-    background-color: var(--clr-grey-10);
-    overflow: hidden;
+.social-icons a {
+    margin: 0 0.5rem;
+    color: var(--clr-grey-3);
     transition: var(--transition);
 }
 
+.social-icons a:hover {
+    color: var(--clr-grey-5);
+}
+
 .show-container {
-    height: 10rem;
+    height: auto;
 }
 
 
@@ -139,54 +159,90 @@ nav {
 }
 
 /* nav media query */
-@media screen and (min-width: 800px) {
-    .nav-center {
-        max-width: 1170px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-
-    .nav-header {
-        padding: 0;
-    }
+@media screen and (max-width: 800px) {
 
     .nav-toggle {
-        display: none;
+        display: flex;
+        font-size: 1.5rem;
+        color: var(--clr-primary-5);
+        background: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        align-items: center;
     }
+
+    /*=============== nav hamburguer =============== */
+    #navMenu>span {
+        display: block;
+        width: 28px;
+        height: 2px;
+        border-radius: 9999px;
+        background-color: black;
+    }
+
+    #navMenu>span:not(:last-child) {
+        margin-bottom: 7px;
+    }
+
+    #navMenu,
+    #navMenu>span {
+        transition: all .3s ease-in-out;
+    }
+
+    #navMenu.active {
+        transition-delay: 0.6s;
+        transform: rotate(45deg);
+    }
+
+    #navMenu.active>span:nth-child(2) {
+        width: 0;
+    }
+
+    #navMenu.active>span:nth-child(1),
+    #navMenu.active>span:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    #navMenu.active>span:nth-child(1) {
+        transform: translateY(9px);
+    }
+
+    #navMenu.active>span:nth-child(3) {
+        transform: translateY(-9px) rotate(90deg);
+    }
+
+    /* ============== */
 
     .links-container {
-        height: auto !important;
+        display: inline-flex;
+        /* flex-direction: column; */
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+        transform: translateY(3em);
+        /* z-index: 9999; */
+        align-items: flex-start;
+        justify-content: center;
     }
-    
+
     .links {
-        display: flex;
+        /* display: inline-block; */
+        flex-direction: column;
+        /* flex-flow: column; */
+
     }
-    
+
     .links a {
+        /* display: inline-block; */
         padding: 0;
         margin: 0 0.5rem;
+        /* justify-content: end; */
     }
 
 
-    .links a:hover {
-        padding: 0;
-    }
 
     .social-icons {
-        display: flex;
-    }
-
-    .social-icons a {
-        margin: 0 0.5rem;
-        color: var(--clr-grey-3);
-        transition: var(--transition);
-    }
-
-    .social-icons a:hover {
-        color: var(--clr-grey-5);
+        display: none;
     }
 
 

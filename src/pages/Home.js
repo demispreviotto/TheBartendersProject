@@ -1,13 +1,13 @@
 import React from "react";
 import './Home.css'
 import Hero from "../components/Hero";
-import HeroCocktails from "../components/CocktailsSlider";
+import CocktailsSlider from "../components/CocktailsSlider";
 
 const Home = () => {
     return (
         <section className="section home">
             <Hero/>
-            <HeroCocktails/>
+            <CocktailsSlider/>
         </section>
     )
 }

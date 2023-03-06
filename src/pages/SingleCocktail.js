@@ -1,23 +1,30 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import './SingleCocktail.css'
 import Loading from '../components/Loading'
 import CocktailsSlider from '../components/CocktailsSlider'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+// import { useGlobalContext } from '../context'
+import { cartItems } from '../data';
+import Product from '../components/Product'
+
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
 const SingleCocktail = () => {
   const { id } = useParams();
-  const [loading, setLoading] = React.useState(false);
-  const [cocktail, setCocktail] = React.useState(null);
+  const [loading, setLoading] = useState(false);
+  const [cocktail, setCocktail] = useState(null);
+  // const { getCocktail } = useGlobalContext()
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoading(true);
     async function getCocktail() {
       try {
         const response = await fetch(`${url}${id}`);
         const data = await response.json();
+        const { drinks } = data;
         // console.log(data)
-        if (data.drinks) {
+        if (drinks) {
           const {
             strDrink: name,
             strDrinkThumb: image,
@@ -35,39 +42,30 @@ const SingleCocktail = () => {
             strMeasure3,
             strMeasure4,
             strMeasure5,
-          } = data.drinks[0];
-          // const ingredients = [
-          //   strIngredient1,
-          //   strIngredient2,
-          //   strIngredient3,
-          //   strIngredient4,
-          //   strIngredient5,
-          // ];
-          // const measures = [
-          //   strMeasure1,
-          //   strMeasure2,
-          //   strMeasure3,
-          //   strMeasure4,
-          //   strMeasure5,
-          // ];
+          } = drinks[0];
           const measures = [
             {
+              id: 1,
               a: strIngredient1,
               b: strMeasure1
             },
             {
+              id: 2,
               a: strIngredient2,
               b: strMeasure2
             },
             {
+              id: 3,
               a: strIngredient3,
               b: strMeasure3
             },
             {
+              id: 4,
               a: strIngredient4,
               b: strMeasure4
             },
             {
+              id: 5,
               a: strIngredient5,
               b: strMeasure5
             },
@@ -79,7 +77,6 @@ const SingleCocktail = () => {
             info,
             glass,
             instructions,
-            // ingredients,
             measures,
           };
           setCocktail(newCocktail);
@@ -111,34 +108,46 @@ const SingleCocktail = () => {
         <img src={image} alt={name} />
         <div className="drink-info">
           <h2 className='section-title'>{name}</h2>
-          <p>
-            <span className='drink-data'>category:</span>{category}
-          </p>
-          <p>
-            <span className='drink-data'>info:</span>{info}
-          </p>
-          <p>
-            <span className='drink-data'>glass:</span>{glass}
-          </p>
-          <p>
-            <span className='drink-data'>instructions:</span>{instructions}
-          </p>
-          <p>
-            <span className='drink-data'>ingredients:</span>
-            <ul>
-              {measures.map((item, index) => {
-                return item.a ? <li><span key={index}>
-                  {item.a} - {item.b}</span></li> : null;
-              })}
-            </ul>
-            {/* {ingredients.map((item, index) => {
+          <h4 className='drink-data'>category:</h4>
+          <p>{category}</p>
+          <h4 className='drink-data'>info:</h4>
+          <p>{info}</p>
+          <h4 className='drink-data'>glass:</h4>
+          <p>{glass}</p>
+          <h4 className='drink-data'>instructions:</h4>
+          <p>{instructions}</p>
+          <h4 className='drink-data'>ingredients:</h4>
+          <ul>
+            {measures.map((item) => {
+              return item.a ? <li key={item.id}>
+                {item.a} - {item.b}</li> : null;
+            })}
+          </ul>
+          {/* {ingredients.map((item, index) => {
               return item ? <span key={index}>{item}</span> : null;
             })}         */}
-          </p>
         </div>
-          <Link to='/' className='btn primary-btn'>back home</Link>
       </div>
-      <CocktailsSlider/>
+      <div className="cart-items">
+        {measures.map((measure) => {
+          console.log(measure.a)
+          let newCartItem = [];
+          cartItems.map((cartItem) => {
+            if (measure.a === cartItem.title) {
+              // console.log(cartItem.title)
+              return newCartItem = cartItem
+            }
+            return newCartItem;
+          })
+          if (newCartItem.title) {
+            const { img, title, price, amount, id } = newCartItem;
+            return <Product key={id} img={img} title={title} price={price} amount={amount} id={id} />
+          }
+        }
+        )}
+      </div>
+      <CocktailsSlider />
+      {/* <Link to='/' className='btn primary-btn'>back home</Link> */}
       {/* </div> */}
     </section>
   )

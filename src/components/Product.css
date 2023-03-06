@@ -10,7 +10,20 @@ product
     border: var(--border-white);
     /* box-shadow: var(--boxShadow); */
     border-radius: var(--radius-out);
-    /* padding: 0 1em; */
+    padding: 1em;
+    align-items: end;
+
+}
+
+.product-card.horizontal {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
+    border: var(--border-white);
+    /* box-shadow: var(--boxShadow); */
+    border-radius: var(--radius-out);
+    padding: 1em;
+    width: 100%;
 }
 
 .product-card:hover {
@@ -23,21 +36,94 @@ product
     justify-content: center;
     width: 100%;
 }
-.product-img  img{
+
+.product-card.horizontal .product-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.product-img img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-out) var(--radius-out) 0 0 ;
+    border-radius: var(--radius-out) var(--radius-out) 0 0;
 }
 
-.product-info {
-    padding: 0 .5rem;
+.product-card.horizontal .product-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-out) var(--radius-out) 0 0;
 }
+
+/* .product-info {
+    padding: 0 .5rem;
+} */
+
+.product-amount {
+    display: flex;
+    /* justify-items: center; */
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.product-card.horizontal .product-amount {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+.product-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center
+}
+
+.product-card.horizontal .product-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 30%;
+    /* justify-items: center; */
+    align-items: center;
+    justify-content: end;
+}
+
+.product-amount-btn {
+    display: flex;
+    width: 1em;
+    height: 1em;
+    border: transparent;
+    background-color: var(--clr-grey-5);
+    color: var(--clr-grey-10);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    font-size: 2.5em;
+}
+
+.product-amount p {
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    font-size: 1.5em;
+    background-color: transparent;
+    color: var(--clr-grey-3);
+    align-items: flex-end;
+    justify-content: center
+}
+
 
 @media screen and (max-width: 800px) {
-    .product {
-        display: flex;
-        flex-direction: row;
-        height: 30.5vh;
+    .product-card {
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* height: 30.5vh; */
         border-radius: var(--radius-out);
     }
 
