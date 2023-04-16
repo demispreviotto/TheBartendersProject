@@ -130,7 +130,7 @@ const SingleCocktail = () => {
       </div>
       <div className="cart-items">
         {measures.map((measure) => {
-          console.log(measure.a)
+          // console.log(measure.a)
           let newCartItem = [];
           cartItems.map((cartItem) => {
             if (measure.a === cartItem.title) {

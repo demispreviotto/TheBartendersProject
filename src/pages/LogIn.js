@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+// import LoginButton from "../components/LoginButton";
 // import Home from '/Home';
 
 const LogIn = ({setUser}) => {

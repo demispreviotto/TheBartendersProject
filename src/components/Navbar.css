@@ -42,6 +42,7 @@ a svg {
     justify-content: center;
 }
 
+
 .logo-link {
     display: inline-flex;
     align-items: center;
@@ -49,16 +50,16 @@ a svg {
 
 }
 
-.logo {
+.logo, .user-avatar {
     display: inline-flex;
     height: 3em;
     width: 3em;
 }
 
-.user {
-    display: flex;
-    height: 2.5em;
-    width: 2.5em;
+.user-avatar {
+    /* display: flex; */
+    /* height: 2.5em; */
+    /* width: 2.5em; */
     background-color: var(--clr-grey-8);
     border-radius: 50%;
     align-items: center;

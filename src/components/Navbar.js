@@ -4,7 +4,12 @@ import logo from '../assets/img/logo.svg'
 import { links, social } from '../data';
 import { NavLink, Link } from 'react-router-dom'
 import { useGlobalContext } from '../context';
-import { FaShoppingBag, FaUser } from 'react-icons/fa'
+import { FaShoppingBag, FaUser } from 'react-icons/fa';
+
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from "../components/LoginButton";
+import LogoutButton from "../components/LogoutButton";
+import Profile from '../pages/Profile';
 
 const Navbar = () => {
 
@@ -13,6 +18,7 @@ const Navbar = () => {
     const linksRef = useRef(null);
     const { amount } = useGlobalContext();
 
+    const { user, isAuthenticated } = useAuth0();
 
     useEffect(() => {
         const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -58,10 +64,19 @@ const Navbar = () => {
                                 <p className='total-amount'>{amount}</p>
                             </div>
                         </Link>
-                        <Link to={'/login'} className='user'>
-                            {/* {loggedIn ? <FaUser/> : "LogeIn"} */}
+                        {isAuthenticated ? (<>
+                            <Link to={'/profile'} className='user'>
+                                <img src={user.picture} alt={user.name} className='user-avatar'/>
+                                {/* <FaUser size='1.5rem' className='' /> */}
+                            </Link>
+                            {/* <LogoutButton /> */}
+                        </>) : (<>
+                            <LoginButton></LoginButton>
+                        </>)}
+                        {/* <Link to={'/login'} className='user'>
+                            // {loggedIn ? <FaUser/> : "LogeIn"}
                             <FaUser size='1.5rem' className='' />
-                        </Link>
+                        </Link> */}
                     </div>
                     <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>
                         {/* <FaBars /> */}

@@ -3,7 +3,6 @@ import React,{useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 import Home from './pages/Home'
 import Recipes from './pages/Recipes'
 import Shop from './pages/Shop'
@@ -15,6 +14,7 @@ import Navbar from './components/Navbar'
 import CartContainer from './pages/CartContainer';
 import LogIn from './pages/LogIn';
 import Register from './pages/Register';
+import Profile from './pages/Profile';
 // import Product from './components/Product'
 
 
@@ -36,6 +36,7 @@ const [user, setUser] = useState(null)
         <Route path='/cart' element={<CartContainer />} />
         <Route path='/login' element={<LogIn setUser={setUser} />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </Router>

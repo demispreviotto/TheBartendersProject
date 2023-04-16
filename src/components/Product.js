@@ -8,9 +8,9 @@ const Product = ({ img, title, price, amount, id, modifier }) => {
 
     return (
         <article className={articleClass}>
-            <div className="product-img">
+            <figure className="product-img">
                 <img src={img} alt={title} />
-            </div>
+            </figure>
             <div className="product-info">
                 <h3>{title}</h3>
                 <h4>${price}</h4>
