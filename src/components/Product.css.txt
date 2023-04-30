@@ -5,36 +5,38 @@ product
 */
 
 .product-card {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     /* grid-template-rows: 3fr 1fr; */
-    border: var(--border-white);
+    /* border: var(--border-white); */
     /* box-shadow: var(--boxShadow); */
-    border-radius: var(--radius-out);
-    padding: 1em;
-    /* align-items: end; */
-    width: 100%;
+    /* border-radius: var(--radius-out); */
+    /* padding: 1em; */
+    /* align-items: center; */
+    /* width: 100%; */
 }
 
 .product-card.horizontal {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 3fr;
-    border: var(--border-white);
+    /* border: var(--border-white); */
     /* box-shadow: var(--boxShadow); */
-    border-radius: var(--radius-out);
+    /* border-radius: var(--radius-out); */
     padding: 1em;
     width: 100%;
 }
 
-.product-card:hover {
+/* .product-card:hover {
     border: var(--border-white);
     box-shadow: var(--boxShadow);
-}
+} */
 
 .product-img {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    /* justify-content: center; */
+    max-width: 20em;
+    background-color: var(--clr-grey-9);
 }
 
 .product-card.horizontal .product-img {
@@ -57,16 +59,32 @@ product
     border-radius: var(--radius-out) var(--radius-out) 0 0;
 }
 
-/* .product-info {
-    padding: 0 .5rem;
-} */
+.product-info {
+    /* padding: 0 1em; */
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: .5em;
+}
+
+.product-description {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.product-info h3,
+.product-info h4 {
+    margin: 0;
+}
 
 .product-amount {
-    display: flex;
+    display: inline-flex;
     /* justify-items: center; */
-    align-items: flex-end;
+    /* align-items: flex-end; */
     justify-content: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    /* height: 3.5em; */
 }
 
 .product-card.horizontal .product-amount {
@@ -80,9 +98,9 @@ product
 .product-toggle {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 75%;
+    width: 50%;
     justify-content: center;
-    justify-items: center;
+    /* justify-items: center; */
     align-items: center
 }
 
@@ -123,12 +141,11 @@ product
 }
 
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 576px) {
     .product-card {
         display: flex;
         flex-direction: row;
-        /* width: 100%; */
-        /* height: 30.5vh; */
+
         border-radius: var(--radius-out);
     }
 
@@ -141,4 +158,4 @@ product
         padding: .25rem;
     }
 
-}
+} */

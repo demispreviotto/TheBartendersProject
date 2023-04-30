@@ -1,21 +1,45 @@
 .hero {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-items: center;
-    align-items: center;
-    padding: 2rem;
-    margin-top: 1em;
-    background: linear-gradient(160deg, var(--clr-grey-8) 30%, var(--clr-grey-9) 50%);
-    border-radius: var(--radius-out);
+    justify-content: flex-end;
+    min-height: 60vh;
+    padding: 2em 15vw;
 }
 
+.hero-dark {
+    color: var(--clr-black);
+}
+
+.hero-midle {
+    color: var(--clr-grey-5);
+}
+
+.hero-light {
+    color: var(--clr-grey-9);
+}
+
+.hero-info {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.hero-info .btn {
+    display: inline-flex;
+    justify-content: center;
+}
 
 .hero-info h1 {
     text-transform: none;
     max-width: 35em;
 }
 
-.hero-info p {
+.hero-info h3 {
     max-width: 35em;
     line-height: 1.8;
 }
@@ -24,9 +48,68 @@
     display: none;
 }
 
+.arrows {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.prev,
+.next {
+    /* position: absolute; */
+    /* bottom: 1%; */
+    /* margin:2em; */
+    margin: 0 1em -1em;
+    /* transform: translateX(-100%); */
+    background: var(--clr-grey-2);
+    color: var(--clr-white);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-color: transparent;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    /* border-radius: var(--radius); */
+    cursor: pointer;
+    /* transition: var(--transition); */
+}
+
+/* .prev:hover,
+.next:hover {
+    background: var(--clr-primary-5);
+} */
+
+/* .prev {
+    left: 45%;
+}
+
+.next {
+    right: 45%;
+} */
+
 @media screen and (max-width: 800px) {
     .hero {
-        text-align: center;
-        justify-content: center;
+        display: flex;
+        height: 60vh;
+        padding: 1.5em .5em;
+    }
+
+    .text {
+        max-width: 45em;
+    }
+
+    .hero-info h1 {
+        font-size: 2em;
+    }
+
+    .hero-info h3 {
+        font-size: 1em;
+    }
+
+    .prev,
+    .next {
+        width: 1.25rem;
+        height: 1.25rem;
+        font-size: 1rem;
     }
 }

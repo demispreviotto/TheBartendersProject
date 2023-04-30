@@ -33,9 +33,9 @@
     transition: var(--transition);
 }
 
-.remove-btn:hover {
+/* .remove-btn:hover {
     color: var(--clr-primary-light);
-}
+} */
 
 .amount-btn {
     width: 1.5rem;
@@ -62,9 +62,9 @@
     fill: var(--clr-primary);
 } */
 
-.amount-btn:hover svg {
+/* .amount-btn:hover svg {
     fill: var(--clr-primary-light);
-}
+} */
 
 .amount {
     text-align: center;

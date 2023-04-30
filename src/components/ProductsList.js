@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductsList.css';
-import Product from './Product';
 import Loading from './Loading';
 import { useGlobalContext } from '../context';
+import CardProduct from './CardProduct';
 
 const ProductslList = () => {
     const { cart, loading } = useGlobalContext();
@@ -18,7 +18,9 @@ const ProductslList = () => {
     return (
         <div className="product-list">
             {cart.map((item) => {
-                return <Product key={item.id} {...item} />
+                return (
+                    <CardProduct key={item.id} {...item} />
+                )
             })}
         </div>
     )

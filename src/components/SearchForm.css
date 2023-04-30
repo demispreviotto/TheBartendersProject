@@ -6,23 +6,24 @@ Form
 
 .search {
     margin: 1rem 0;
+    padding: 0 10vw;
 }
 
 .search-form {
     width: var(--smallWidth);
     margin: 0 auto;
     max-width: var(--maxWidth);
-    padding: 2rem;
+    padding: 2em;
     text-transform: capitalize;
 }
 
-.search-form .form-input {
+/* .search-form .form-input {
     display: inline-block;
-    padding: 0.9rem 1.5rem;
+    padding: .5em;
     font-size: 1.2rem;
     width: 100%;
-    border: var(--border-white);
-    border-radius: var(--radius-mid);
+    border: transparent;
+    background-color: var(--clr-white);
     font-family: inherit;
     color: var(--clr-grey-3);
     transition: 0.3s;
@@ -30,17 +31,17 @@ Form
 
 .search-form .form-input::placeholder {
     color: var(--clr-grey-8);
-}
+} */
 
-.search-form .form-input:hover {
+/* .search-form .form-input:hover {
     filter: brightness(97%);
-}
+} */
 
-.search-form .form-input:focus {
+/* .search-form .form-input:focus {
     filter: brightness(100%);
     background: var(--clr-grey-10);
     border: var(--border-white);
-}
+} */
 
 @media screen and (max-width: 800px) {
     .search-form {

@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
+// import logo from '../assets/img/logo.svg'
 import { links } from '../data';
+// import { links, social } from '../data';
 import { NavLink, Link } from 'react-router-dom'
 import { useGlobalContext } from '../context';
+// import { FaShoppingBag } from 'react-icons/fa';
 import { BsBag } from 'react-icons/bs';
 import { IoSkullOutline } from 'react-icons/io5';
 
@@ -19,36 +22,11 @@ const Navbar = () => {
     const { user, isAuthenticated } = useAuth0();
 
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth > 800 || showLinks) {
-                linksContainerRef.current.style.visibility = `visible`
-            } else {
-                linksContainerRef.current.style.visibility = `hidden`
-            }
-        }
-        const handleClickOutside = (event) => {
-            if (showLinks && !linksContainerRef.current.contains(event.target)) {
-                setShowLinks(false)
-                linksContainerRef.current.style.visibility = `hidden`
-            }
-        }
-        const handleScroll = () => {
-            if (showLinks) {
-                setShowLinks(false)
-                linksContainerRef.current.style.visibility = `hidden`
-            }
-        }
-
-        handleResize()
-
-        window.addEventListener("resize", handleResize)
-        document.addEventListener("click", handleClickOutside)
-        document.addEventListener("scroll", handleScroll)
-
-        return () => {
-            window.removeEventListener("resize", handleResize)
-            document.removeEventListener("click", handleClickOutside)
-            document.removeEventListener("scroll", handleScroll)
+        const linksHeight = linksRef.current.getBoundingClientRect().height;
+        if (showLinks) {
+            linksContainerRef.current.style.height = `${linksHeight}px`
+        } else {
+            linksContainerRef.current.style.height = `0px`
         }
     }, [showLinks])
 
@@ -58,6 +36,7 @@ const Navbar = () => {
                 <div className="nav-header">
                     <div>
                         <Link to={'/'} className='logo-link'>
+                            {/* <img src={logo} alt="logo" className='logo' /> */}
                             <IoSkullOutline />
                         </Link>
                     </div>
@@ -73,13 +52,21 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='nav-container'>
+                        {/* <div>
+                        <ul className="social-icons">
+                            {social.map((socialIcon) => {
+                                const { id, url, icon } = socialIcon;
+                                return (
+                                    <li key={id}><a href={url}>{icon}</a></li>
+                                )
+                            })}
+                        </ul>
+                    </div> */}
                         <Link to={'/cart'} className='cart-icon'>
                             <BsBag size='1.5rem' className='cart-icon' />
-                            {amount > 0 && (
-                                <div className='amount-container'>
-                                    <p className='total-amount'>{amount}</p>
-                                </div>
-                            )}
+                            <div className='amount-container'>
+                                <p className='total-amount'>{amount}</p>
+                            </div>
                         </Link>
                         {isAuthenticated ? (<>
                             <Link to={'/profile'} className='user'>
@@ -91,6 +78,7 @@ const Navbar = () => {
                     </div>
                     <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>
                         <div id="navMenu" className={showLinks ? 'active' : ''}>
+                            <span></span>
                             <span></span>
                             <span></span>
                         </div>

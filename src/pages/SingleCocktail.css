@@ -1,21 +1,23 @@
-/* 
-====== 
-Cocktail
-======
-*/
-
 .drink {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
     align-items: center;
     margin: 1em 0;
 }
 
-.drink img {
-    border: none;
-    border-radius: var(--radius-out);
-    width: 50vh;
+.drink-figure {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-width: 70vw;
+}
+
+.drink-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .drink p,
@@ -40,19 +42,21 @@ li {
     box-shadow: var(--boxShadow);
     border: var(--border-white);
     height: 100%;
+    width: auto;
     padding: .75em;
     margin-top: 0.5em;
 }
 
 .cart-items {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    gap: 0 .5em;
+    gap: 1em;
 }
 
 @media screen and (max-width: 800px) {
     .drink {
-        display: block;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
         text-align: left;
@@ -60,8 +64,13 @@ li {
     }
 
     .drink-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
         box-shadow: var(--boxShadow);
         border: var(--border-white);
+        width: 100%;
+        height: auto;
         /* padding-top: 0; */
         padding: .75em;
         margin-top: 0.5em;
@@ -71,12 +80,13 @@ li {
         width: 100%;
         height: auto;
     }
-    .cart-items{
-        display: flex;
+
+    .cart-items {
+        display: inline-flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 1em
-        ;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* gap: 1em; */
 
     }
 }

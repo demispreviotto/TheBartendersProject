@@ -1,0 +1,117 @@
+.card {
+    max-width: 20em;
+    background-color: var(--clr-white);
+}
+
+.card-figure {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: var(--clr-grey-9);
+}
+
+
+.card-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-mark {
+    position: absolute;
+    transform: translate(-.5em, .5em);
+    color: var(--clr-grey-3);
+    background-color: transparent;
+    border: transparent;
+}
+
+.card-mark svg {
+    height: auto;
+    width: 2em;
+}
+
+.card-mark:hover {
+    color: var(--clr-black);
+}
+
+.active {
+    color: var(--clr-grey-3);
+}
+
+.card-info {
+    padding: .5em;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+
+.card-button {
+    height: 2.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-amount {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.product-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    justify-content: center;
+    align-items: center
+}
+
+.product-amount-btn {
+    display: flex;
+    width: 1em;
+    min-width: 1em;
+    height: 1em;
+    border: transparent;
+    background-color: var(--clr-grey-5);
+    color: var(--clr-grey-10);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    font-size: 2.5em;
+}
+
+.product-amount p {
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    font-size: 1.5em;
+    background-color: transparent;
+    color: var(--clr-grey-3);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        max-width: 15em;
+    }
+
+    .card-info {
+        padding: .5em;
+    }
+
+    .card-title {
+        margin-bottom: 0;
+    }
+
+    .card-button {
+        height: 1.5em;
+
+    }
+}

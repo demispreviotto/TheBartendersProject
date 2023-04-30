@@ -1,19 +1,9 @@
-/* 
-====== 
-Cocktails List 
-======
-*/
-
 .cocktails-center {
-    margin: 0 auto;
-    max-width: var(--max-width);
-    display: grid;
-    row-gap: 2rem;
-    column-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
-@media screen and (min-width: 576px) {
-    .cocktails-center {
-        grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
-    }
-}
+@media screen and (min-width: 800px) {}

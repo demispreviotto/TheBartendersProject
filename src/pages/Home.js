@@ -5,9 +5,11 @@ import CocktailsSlider from "../components/CocktailsSlider";
 
 const Home = () => {
     return (
-        <section className="section home">
-            <Hero/>
-            <CocktailsSlider/>
+        <section className="home">
+            <Hero />
+            <section className="section">
+                <CocktailsSlider />
+            </section>
         </section>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useRef} from 'react';
+import React, { useRef } from 'react';
 import './SearchForm.css'
 // import reducer from '../reducer';
 import { useGlobalContext } from '../context';

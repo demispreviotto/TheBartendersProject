@@ -1,15 +1,12 @@
-/* 
-====================
-CocktailsSlider
-==================== 
-*/
-
-
 .slider {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* display: grid;
+    grid-auto-flow: column; */
     scroll-behavior: auto;
-    gap: 0.5rem;
+    /* height: auto; */
+    gap: 1rem;
     overflow-y: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
@@ -26,8 +23,8 @@ CocktailsSlider
     height: 30.5vh;
     width: 450px;
     border-radius: var(--radius-out);
-    border: var(--border-white);
-    box-shadow: var(--boxShadow);
+    /* border: var(--border-white); */
+    /* box-shadow: var(--boxShadow); */
     margin: 0.5rem 0;
 }
 

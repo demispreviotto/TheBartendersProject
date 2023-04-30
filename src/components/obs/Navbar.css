@@ -7,7 +7,6 @@ nav {
     justify-content: center;
     backdrop-filter: blur(3px);
     height: 3em;
-    z-index: 98;
 }
 
 .nav-center {
@@ -24,6 +23,11 @@ nav {
     gap: 0.5em;
 }
 
+/* .nav-header a {
+    display: flex;
+    position: relative;
+} */
+
 .nav-toggle {
     display: none;
 }
@@ -32,7 +36,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .75em;
+    gap: 1em;
 }
 
 a svg {
@@ -45,22 +49,32 @@ a svg:hover {
     fill: var(--clr-balck);
 }
 
+
+/* .logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+} */
 .logo-link svg {
     height: 1.5em;
     width: 1.5em;
     color: var(--clr-grey-3);
+    transition: .3s ease-in-out;
 }
 
 .logo-link svg:hover {
+    /* height: 2em; */
+    /* width: 2em; */
     color: var(--clr-black);
 }
 
-.user {
-    background-color: transparent;
-    height: 2em;
-    width: 2em;
-    border-radius: 50%;
-}
+/* .logo {
+    display: inline-flex;
+    height: 3em;
+    width: 3em;
+    transform: translateY(10%);
+} */
 
 .user-avatar {
     height: 2em;
@@ -88,8 +102,6 @@ a svg:hover {
 .nav-container .cart-icon {
     display: inline-flex;
     height: 1.25em;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav-container .amount-container {
@@ -97,10 +109,10 @@ a svg:hover {
     position: relative;
     align-items: center;
     justify-content: center;
-    top: 0.5em;
-    right: 0.7em;
-    width: 20px;
-    height: 20px;
+    top: -0.75em;
+    right: 0.6em;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 50%;
     background: var(--clr-grey-8);
 }
@@ -116,9 +128,8 @@ a svg:hover {
     display: flex;
     height: auto;
     background-color: var(--clr-grey-10);
+    transition: .3s;
     align-items: center;
-    visibility: visible;
-    transition: all .3s ease-in-out;
 }
 
 .links {
@@ -136,8 +147,25 @@ a svg:hover {
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     padding: 0em 1em;
+    /* border-bottom: 6px solid transparent; */
+    /* border-radius: 0px; */
 }
 
+/* .links a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: .5px;
+    left: 50%;
+    background-color: var(--clr-grey-8);
+    transition: 0.3s ease-in-out;
+}
+
+.links a:hover::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+} */
 
 .links a:hover {
     color: var(--clr-balck);
@@ -170,6 +198,7 @@ a svg:hover {
     display: none;
 }
 
+/* nav media query */
 @media screen and (max-width: 800px) {
     .nav {
         padding: 0 1em;
@@ -189,15 +218,15 @@ a svg:hover {
         align-items: center;
     }
 
-    /* .nav-container {
+    .nav-container {
         gap: 0;
-    } */
+    }
 
     /*=============== nav hamburguer =============== */
     #navMenu>span {
         display: block;
-        width: 20px;
-        height: 1px;
+        width: 28px;
+        height: 2px;
         border-radius: 9999px;
         background-color: var(--clr-grey-3);
     }
@@ -213,43 +242,52 @@ a svg:hover {
 
     #navMenu.active {
         transition-delay: 0.6s;
+        transform: rotate(45deg);
+    }
+
+    #navMenu.active>span:nth-child(2) {
+        width: 0;
     }
 
     #navMenu.active>span:nth-child(1),
-    #navMenu.active>span:nth-child(2) {
+    #navMenu.active>span:nth-child(3) {
         transition-delay: 0.3s;
     }
 
     #navMenu.active>span:nth-child(1) {
-        transform: translateY(4px) rotate(-45deg);
+        transform: translateY(9px);
     }
 
-    #navMenu.active>span:nth-child(2) {
-        transform: translateY(-4px) rotate(45deg);
+    #navMenu.active>span:nth-child(3) {
+        transform: translateY(-9px) rotate(90deg);
     }
 
     /* ============== */
 
     .links-container {
         display: inline-flex;
-        height: 100%;
+        /* flex-direction: column; */
+        height: 0;
         width: 100%;
+        overflow: hidden;
         transform: translateY(3em);
+        /* z-index: 9999; */
         align-items: flex-start;
         justify-content: center;
     }
 
     .links {
-        display: inline-flex;
+        /* display: inline-block; */
         flex-direction: column;
-        flex-wrap: nowrap;
-        margin-bottom: .5em;
+        /* flex-flow: column; */
 
     }
 
     .links a {
+        /* display: inline-block; */
         padding: 0;
         margin: 0 0.5rem;
+        /* justify-content: end; */
     }
 
     .links a::before {
@@ -259,10 +297,6 @@ a svg:hover {
     .social-icons {
         display: none;
     }
-}
 
-@media screen and (min-width: 801px) {
-    .links-container {
-        visibility: hidden;
-    }
+
 }

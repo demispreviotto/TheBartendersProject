@@ -1,0 +1,48 @@
+import React from 'react';
+import './Product.css';
+import { useGlobalContext } from '../context';
+import PropTypes from 'prop-types';
+
+const Product = ({ img, title, price, amount, id, orientation }) => {
+    const { toggleAmount } = useGlobalContext(id);
+    const articleClass = `product-card ${orientation ? orientation : ''}`;
+
+    return (
+        <article className={articleClass}>
+            <figure className="product-img">
+                <img src={img} alt={title} />
+            </figure>
+            <div className='product-info'>
+                <div className="product-description">
+                    <h3>{title}</h3>
+                    <h4>${price}</h4>
+                </div>
+            </div>
+            <div className='product-amount'>
+                <div className='product-toggle'>
+                    {/* increase amount */}
+                    <button className='btn product-amount-btn'
+                        onClick={() => toggleAmount(id, 'dec')}
+                    >-</button>
+                    {/* amount */}
+                    <p className=''>{amount}</p>
+                    {/* decrease amount */}
+                    <button className='btn product-amount-btn'
+                        onClick={() => toggleAmount(id, 'inc')}
+                    >+</button>
+                </div>
+            </div>
+        </article>
+    )
+}
+
+Product.propTypes = {
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    amount: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    orientation: PropTypes.string,
+};
+
+export default Product;
