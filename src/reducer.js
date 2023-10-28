@@ -11,9 +11,6 @@ const reducer = (state, action) => {
     if (action.type === 'COCKTAILS') {
         return { ...state, cocktails: action.payload, loading: false }
     }
-    // if (action.type === 'COCKTAIL') {
-    //     return { ...state, cocktail: action.payload, loading: false }
-    // }
     if (action.type === 'CLEAR_CART') {
         let tempCart = state.cart.map((cartItem) => {
             if (cartItem.amount !== 0) {
@@ -38,7 +35,6 @@ const reducer = (state, action) => {
             }
             return cartItem
         })
-        // .filter((cartItem) => cartItem.amount !== 0)
         return { ...state, cart: tempCart }
     }
     if (action.type === "GET_TOTAL") {

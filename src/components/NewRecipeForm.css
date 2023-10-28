@@ -1,0 +1,68 @@
+.new-recipe-form h4 {
+    margin-bottom: 0;
+}
+
+.new-recipe-form div {
+    margin-bottom: 1em;
+}
+
+.new-recipe-form ul {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.new-recipe-form select {
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    margin: .5em;
+    background: var(--clr-white);
+    border: transparent;
+    width: 100%;
+    border-radius: var(--radius-mid);
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--clr-grey-3);
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.image-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image-input p {
+    margin: 0;
+}
+
+.alcoholic {
+    display: flex;
+    flex-direction: row;
+}
+
+.alcoholic input {
+    width: auto;
+}
+
+.ingredients-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-recipe-form .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.new-recipe-form .buttons .btn {
+    width: 25%;
+}

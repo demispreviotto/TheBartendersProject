@@ -1,13 +1,11 @@
 import React from 'react';
 import './CocktailsList.css';
-import Cocktail from './Cocktail';
 import CardDrink from './CardDrink';
 import Loading from './Loading';
 import { useGlobalContext } from '../context';
 
 const CocktailsList = () => {
   const { cocktails, loading } = useGlobalContext();
-  // console.log(cocktails);
 
   if (loading) {
     return <Loading />
@@ -19,21 +17,12 @@ const CocktailsList = () => {
 
   return (
     <>
-      {/* <h2 className='section-title'>cocktails</h2> */}
       <div className="cocktails-center">
         {cocktails.map((item) => {
           return <CardDrink key={item.id} {...item} />
         })}
       </div>
     </>
-    // <>
-    //   {/* <h2 className='section-title'>cocktails</h2> */}
-    //   <div className="cocktails-center">
-    //     {cocktails.map((item) => {
-    //       return <Cocktail key={item.id} {...item} />
-    //     })}
-    //   </div>
-    // </>
   )
 }
 

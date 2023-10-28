@@ -45,11 +45,11 @@ const Projects = () => {
                                 <img src="./assets/img/port1.jpg" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
+                                        {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
+                                        {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>
@@ -64,11 +64,9 @@ const Projects = () => {
                                 <img src="./assets/img/port2.png" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>
@@ -83,11 +81,9 @@ const Projects = () => {
                                 <img src="./assets/img/port3.jpg" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>
@@ -102,11 +98,9 @@ const Projects = () => {
                                 <img src="./assets/img/port4.png" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>
@@ -121,11 +115,9 @@ const Projects = () => {
                                 <img src="./assets/img/port5.png" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>
@@ -140,11 +132,9 @@ const Projects = () => {
                                 <img src="./assets/img/port6.jpg" alt="" />
                                 <div className="prt-overlay">
                                     <span className="prt-icon zoom-icon">
-                                    {/* <span className="prt-icon zoom-icon" style="--i: 0s"> */}
                                         <i className="uil uil-search-plus"></i>
                                     </span>
                                     <a href="#" className="prt-icon">
-                                    {/* <a href="#" className="prt-icon" style="--i: 0.15s"> */}
                                         <i className="uil uil-link-h"></i>
                                     </a>
                                 </div>

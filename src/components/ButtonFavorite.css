@@ -1,0 +1,14 @@
+.card-mark {
+    color: var(--clr-black);
+    background-color: transparent;
+    border: transparent;
+}
+
+.card-mark svg {
+    height: auto;
+    width: 1.5em;
+}
+
+.card-mark:hover {
+    color: var(--clr-black);
+}

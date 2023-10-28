@@ -5,10 +5,8 @@ import SearchForm from '../components/SearchForm'
 const Recipes = () => {
     return (
         <section className='section'>
-            {/* <div className="container"> */}
-                <SearchForm />
-                <CocktailsList />
-            {/* </div> */}
+            <SearchForm />
+            <CocktailsList />
         </section>
     )
 }

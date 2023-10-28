@@ -1,7 +1,3 @@
-.shop .container {
-    transition: 0.4s;
-}
-
 .shop-header {
     display: flex;
     align-items: flex-end;
@@ -25,15 +21,11 @@
     transition: 0.3s background-color;
 }
 
-/* .filter-btn.mixitup-control-active {
-    color: var(--clr-primary-1);
-} */
-
 @media screen and (max-width: 800px) {
-    .shop-header{
+    .shop-header {
         display: flex;
         flex-wrap: wrap;
         margin: .5em;
-        
+
     }
 }

@@ -1,50 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import CardProduct from './CardProduct';
 import CardDrink from './CardDrink';
+import { cartItems } from '../data.js';
+import './Favorites.css'
 
 const Favorites = () => {
     const [favoriteDrinks, setFavoriteDrinks] = useState([]);
     const [favoriteProducts, setFavoriteProducts] = useState([]);
+    const urlById = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
-    useEffect(() => {
-        const drinks = JSON.parse(localStorage.getItem('favoritesDrinks')) || [];
-        const products = JSON.parse(localStorage.getItem('favoritesProducts')) || [];
-        setFavoriteDrinks(drinks);
-        setFavoriteProducts(products);
-    }, []);
-
-    const renderFavoriteItem = (itemType, itemId) => {
-        if (itemType === 'favoriteDrinks') {
-            // Find the drink object based on the id from an API or data source
-            const drink = {}; // replace with the actual drink object
-            return <CardDrink {...drink} key={itemId} />;
-            // } else if (itemType === 'favoriteProducts') {
-        } else {
-            // Find the product object based on the id from an API or data source
-            const product = {}; // replace with the actual product object
-            return <CardProduct {...product} key={itemId} />;
-        }
+    const fetchFavoriteDrinks = async () => {
+        const drinkIds = JSON.parse(localStorage.getItem('favoriteDrinks')) || [];
+        const favoriteDrinkObjects = await Promise.all(
+            drinkIds.map(async (drinkId) => {
+                const response = await fetch(`${urlById}${drinkId}`);
+                const data = await response.json();
+                const drink = data.drinks[0];
+                return {
+                    id: drink.idDrink,
+                    name: drink.strDrink,
+                    image: drink.strDrinkThumb,
+                    info: drink.strAlcoholic,
+                };
+            })
+        );
+        setFavoriteDrinks(favoriteDrinkObjects);
     };
 
+    const fetchFavoriteProducts = async () => {
+        const productIds = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
+        const favoriteProductObjects = productIds.map((productId) => {
+            const product = cartItems.find((item) => item.id === productId);
+            return product;
+        });
+        setFavoriteProducts(favoriteProductObjects);
+    };
+
+    useEffect(() => {
+        fetchFavoriteDrinks();
+        fetchFavoriteProducts();
+    }, []);
+
     return (
-        <div>
-            <h2>Favorites Drinks:</h2>
-            <ul>
-                {favoriteDrinks.map((drinkId) => (
-                    <li key={drinkId}>
-                        {renderFavoriteItem('favoriteDrinks', drinkId)}
-                    </li>
-                ))}
-            </ul>
-            <h2>Favorites Products:</h2>
-            <ul>
-                {favoriteProducts.map((productId) => (
-                    <li key={productId}>
-                        {renderFavoriteItem('favoriteProducts', productId)}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <section className='favorites-section'>
+            <div>
+                <h3>Favorites Drinks:</h3>
+                {
+                    favoriteDrinks.length > 0 ? (
+                        <div className='favorites'>
+                            {favoriteDrinks.map((drink) => (
+                                <CardDrink key={drink.id} {...drink} />
+                            ))}
+                        </div>)
+                        :
+                        (
+                            <p>no favorites yet</p>
+                        )
+                }
+            </div>
+            <div>
+                <h3>Favorites Products:</h3>
+                {favoriteProducts.length > 0 ? (
+                    <div className='favorites'>
+                        {favoriteProducts.map((product) => (
+                            <CardProduct key={product.id} {...product} />
+                        ))}
+                    </div>
+                ) : (
+                    <p>no favorites yet</p>
+
+                )}
+            </div>
+        </section>
     );
 };
 

@@ -1,13 +1,11 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "./Loading";
-import LogoutButton from "./LogoutButton";
 import Favorites from "./Favorites";
 import CocktailsSlider from "./CocktailsSlider";
 
 const Profile = () => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
-    // console.log(user)
+    const { isAuthenticated, isLoading } = useAuth0();
     if (isLoading) {
         return <Loading />
     }
@@ -15,13 +13,6 @@ const Profile = () => {
         isAuthenticated && (
             <section className="section">
                 <div>
-                    <img src={user.picture} alt={user.name} />
-                    <h2>{user.name}</h2>
-                    {/* <p>Email:{user.email}</p> */}
-                    <LogoutButton />
-                </div>
-                <div>
-                    <h3>Favorites</h3>
                     <Favorites />
                 </div>
                 <div>

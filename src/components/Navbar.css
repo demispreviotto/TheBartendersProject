@@ -189,10 +189,6 @@ a svg:hover {
         align-items: center;
     }
 
-    /* .nav-container {
-        gap: 0;
-    } */
-
     /*=============== nav hamburguer =============== */
     #navMenu>span {
         display: block;

@@ -21,7 +21,6 @@ const Register = () => {
                     <input type="text" name="userLastName" id="userLastName" placeholder="Doe" />
                     <label htmlFor="contactNumber">Contact Number</label>
                     <input type="tel" name="contactNumber" id="contactNumber" placeholder="+34" />
-                    {/* <input type="number" name="creditCartNumber" id="contactNumber" placeholder="+34" /> */}
 
                     <hr />
                     <label htmlFor="bartender">Register as a Bartender</label><br />
@@ -29,7 +28,6 @@ const Register = () => {
                     <p>To work with us you can register as a bartender.<br />your credentials will be reviewed by suitable personnel from The Bartenders Project. You will be contacted to validate your skills in person at one of our partner locations.</p>
                     <label htmlFor="credentials">Share your credentials</label><br />
                     <input type="file" name="credentials" id="credentials" />
-                    {/* <button className="btn-primary">Submit</button> */}
                     <hr />
                     <button className="btn primary-btn">submit</button>
                 </div>

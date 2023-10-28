@@ -1,14 +1,11 @@
-/* 
-====== 
-Error
-======
-*/
 .error-page {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 
 .error-container {
+    display: inline-flex;
     text-align: center;
-    text-transform: capitalize;
+    flex-direction: column;
+    margin: 2em;
 }

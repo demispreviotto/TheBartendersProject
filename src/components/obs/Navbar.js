@@ -10,7 +10,7 @@ import { BsBag } from 'react-icons/bs';
 import { IoSkullOutline } from 'react-icons/io5';
 
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from "../components/LoginButton";
+import ButtonLogin from "../components/ButtonLogin";
 
 const Navbar = () => {
 
@@ -73,7 +73,7 @@ const Navbar = () => {
                                 <img src={user.picture} alt={user.name} className='user-avatar' />
                             </Link>
                         </>) : (<>
-                            <LoginButton></LoginButton>
+                            <ButtonLogin></ButtonLogin>
                         </>)}
                     </div>
                     <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>

@@ -7,7 +7,8 @@ import { BsBag } from 'react-icons/bs';
 import { IoSkullOutline } from 'react-icons/io5';
 
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from "../components/LoginButton";
+import ButtonLogin from "../components/ButtonLogin";
+import ButtonUser from "./ButtonUser";
 
 const Navbar = () => {
 
@@ -16,7 +17,7 @@ const Navbar = () => {
     const linksRef = useRef(null);
     const { amount } = useGlobalContext();
 
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
     useEffect(() => {
         const handleResize = () => {
@@ -82,11 +83,9 @@ const Navbar = () => {
                             )}
                         </Link>
                         {isAuthenticated ? (<>
-                            <Link to={'/profile'} className='user'>
-                                <img src={user.picture} alt={user.name} className='user-avatar' />
-                            </Link>
+                            <ButtonUser></ButtonUser>
                         </>) : (<>
-                            <LoginButton></LoginButton>
+                            <ButtonLogin></ButtonLogin>
                         </>)}
                     </div>
                     <button className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>

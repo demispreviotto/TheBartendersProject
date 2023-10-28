@@ -1,0 +1,12 @@
+.favorites-section {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.favorites {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1em;
+}

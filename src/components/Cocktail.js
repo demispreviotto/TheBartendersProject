@@ -7,7 +7,6 @@ const Cocktail = ({ image, name, id, info, glass, orientation }) => {
   const containerClass = `cocktail ${orientation ? orientation : ''}`;
 
   return (
-    // <article className='cocktail'>
     <article className={containerClass}>
       <figure className="cocktail-img">
         <img src={image} alt={name} />

@@ -7,7 +7,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 
 const Hero = () => {
 
-    const [heroes, setheroes] = useState(heroData)
+    const [heroes, setHeroes] = useState(heroData)
     const [index, setIndex] = useState(0)
     const { title, color, image, quote, link, legend } = heroes[index];
 
@@ -37,7 +37,6 @@ const Hero = () => {
                 if (index > heroes.length - 1) {
                     index = 0
                 }
-                // console.log(title)
                 return index
             })
         }, 5000)
@@ -53,13 +52,13 @@ const Hero = () => {
                 <article className="hero-info" >
                     <h1>{title}</h1>
                     <h3 className={color}>{quote}</h3>
-                    <Link to={{ link }} className="btn primary-btn">{legend}</Link>
+                    <Link to={link} className="btn primary-btn">{legend}</Link>
                 </article>
                 <div className="arrows">
-                    <button className='prev' onClick={prevSlide}>
+                    <button className='btn primary-btn prev' onClick={prevSlide}>
                         <FiChevronLeft />
                     </button>
-                    <button className='next' onClick={nextSlide}>
+                    <button className='btn primary-btn next' onClick={nextSlide}>
                         <FiChevronRight />
                     </button>
                 </div>

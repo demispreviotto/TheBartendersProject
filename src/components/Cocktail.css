@@ -1,37 +1,16 @@
-/* 
-====== 
-Cocktail 
-======
-*/
-
 .cocktail {
     display: flex;
     flex-direction: column;
-    /* display: grid;
-    grid-template-rows: 2fr 1fr; */
-    background: var(--clr-withe);
-    /* border: var(--border-white); */
-    /* box-shadow: var(--boxShadow); */
+    background: var(--clr-white);
     transition: var(--mainTransition);
     border-radius: var(--radius-mid);
     max-width: 20em;
 }
 
-/* .cocktail:hover {
-    box-shadow: var(--darkShadow);
-} */
-
 .cocktail.horizontal {
-    /* display: grid;
-    grid-template-columns: 2fr 1fr; */
     grid-template-rows: 2fr 1fr;
-    /* display: flex;
-    flex-direction: row; */
-    /* height: 30.5vh; */
     min-width: 10em;
-    /* height: 100%; */
     border-radius: var(--radius-out);
-    /* margin: 1rem 0; */
 }
 
 .cocktail-img {
@@ -39,7 +18,6 @@ Cocktail
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    /* border-radius: var(--radius-mid); */
 }
 
 .cocktail-img img,
@@ -47,16 +25,11 @@ Cocktail
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border-radius: var(--radius-mid) var(--radius-mid) 0 0; */
 }
 
 .cocktail-footer {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start;
-    padding: 0.5em 1.5rem 1.5em;
-    background-color: #FFF;
-    border-radius: 0 var(--radius-out) 0 var(--radius-out); */
 }
 
 .cocktail-info {
@@ -65,8 +38,6 @@ Cocktail
     flex-wrap: nowrap;
     align-items: flex-start;
     padding: 0.5em 1em 0;
-    /* height: auto; */
-    /* border-radius: 0 var(--radius-out) 0 var(--radius-out); */
 }
 
 .cocktail-footer h3,
@@ -81,41 +52,21 @@ Cocktail
 
 .cocktail-footer p {
     color: var(--clr-grey-5);
-    /* margin-bottom: 1em; */
 }
 
 .cocktail-footer .btn {
     display: flex;
     justify-content: center;
-    /* color: var(--clr-grey-5); */
     margin: .5em auto;
     font-size: 1em;
     padding: 0 .5em;
 }
 
-
-
-
 @media screen and (max-width: 800px) {
-    /* .cocktail {
-        display: flex;
-        flex-direction: row;
-        height: 30.5vh;
-        border-radius: var(--radius-out);
-    } */
-
     .cocktail {
         max-width: 15em;
     }
 
-
-    /* .cocktail img {
-    } */
-
-    /* .cocktail-footer {
-        padding: .25em;
-
-    } */
     .cocktail-info {
         padding: .25em 0.5em 0;
 
@@ -134,9 +85,4 @@ Cocktail
     .cocktail-footer h4 {
         font-size: .8em;
     }
-
-    /* .cocktail.horizontal {
-        width: 100%;
-    } */
-
 }

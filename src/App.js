@@ -12,8 +12,10 @@ import Error from './pages/Error'
 import SingleCocktail from './pages/SingleCocktail'
 import Navbar from './components/Navbar'
 import CartContainer from './pages/CartContainer';
-import Register from './pages/Register';
-import ClientDashboard from './pages/ClientDashboard';
+import DashboardClient from './pages/DashboardClient';
+import DashboardCreator from './pages/DashboardCreator';
+
+
 
 function App() {
 
@@ -27,11 +29,9 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        {/* <Route path='/product/:id' element={<Product />} /> */}
         <Route path='/cart' element={<CartContainer />} />
-        {/* <Route path='/login' element={<LogIn setUser={setUser} />} /> */}
-        <Route path='/register' element={<Register />} />
-        <Route path='/profile' element={<ClientDashboard />} />
+        <Route path='/profile' element={<DashboardClient />} />
+        <Route path='/creator' element={<DashboardCreator />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </Router>

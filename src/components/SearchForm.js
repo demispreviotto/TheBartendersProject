@@ -1,22 +1,10 @@
 import React, { useRef } from 'react';
 import './SearchForm.css'
-// import reducer from '../reducer';
 import { useGlobalContext } from '../context';
 
 const SearchForm = () => {
-  // const { setSearchTerm } = useGlobalContext();
   const { searchCocktail } = useGlobalContext();
   const searchValue = useRef('');
-
-  // useEffect(() => {
-  //   searchValue.current.focus()
-  // }, [])
-
-  // const searchCocktail = () => {
-  //   setSearchTerm(searchValue.current.value);
-  //   // dispatch({type:SEARCHFORM, payload: searchValue.current.value})
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault()
   }

@@ -1,38 +1,27 @@
 .card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 0.75em;
+    min-width: 145px;
     max-width: 20em;
     background-color: var(--clr-white);
+    border-radius: var(--radius-out);
+    box-shadow: var(--lightShadow);
 }
 
 .card-figure {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    background-color: var(--clr-grey-9);
+    background-color: transparent;
 }
-
 
 .card-img {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-}
-
-.card-mark {
-    position: absolute;
-    transform: translate(-.5em, .5em);
-    color: var(--clr-grey-3);
-    background-color: transparent;
-    border: transparent;
-}
-
-.card-mark svg {
-    height: auto;
-    width: 2em;
-}
-
-.card-mark:hover {
-    color: var(--clr-black);
+    border-radius: var(--radius-mid);
 }
 
 .active {
@@ -40,13 +29,16 @@
 }
 
 .card-info {
-    padding: .5em;
+    padding: 0.5em;
+}
+
+.card-info p {
+    margin-bottom: 0.5em;
 }
 
 .card-title {
     margin-bottom: 0;
 }
-
 
 .card-button {
     height: 2.5em;
@@ -54,38 +46,40 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .product-amount {
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .product-toggle {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 50%;
-    justify-content: center;
-    align-items: center
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 0.5em;
 }
 
-.product-amount-btn {
+.product-toggle-btn {
     display: flex;
-    width: 1em;
-    min-width: 1em;
-    height: 1em;
+    width: 26px;
+    min-width: 26px;
+    height: 26px;
     border: transparent;
-    background-color: var(--clr-grey-5);
-    color: var(--clr-grey-10);
+    background-color: var(--clr-black);
+    color: var(--clr-white);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     box-shadow: none;
-    font-size: 2.5em;
+    font-size: 1.5em;
+    margin: 0;
 }
 
-.product-amount p {
+.product-toggle p {
     display: flex;
     width: 1.5em;
     height: 100%;

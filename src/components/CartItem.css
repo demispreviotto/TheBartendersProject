@@ -46,10 +46,7 @@
 
 .amount-btn {
     display: flex;
-    /* width: .5em; */
-    /* height: .5em; */
     border: transparent;
-    /* background-color: var(--clr-grey-1); */
     color: var(--clr-grey-2);
     border-radius: 50%;
     align-items: center;
@@ -57,14 +54,6 @@
     box-shadow: none;
     font-size: 2em;
 }
-
-/* .amount-btn svg {
-    fill: var(--clr-primary);
-} */
-
-/* .amount-btn:hover svg {
-    fill: var(--clr-primary-light);
-} */
 
 .amount {
     text-align: center;
