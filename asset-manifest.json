@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TheBartendersProject/static/css/main.44238dbd.css",
+    "main.js": "/TheBartendersProject/static/js/main.6623c36c.js",
+    "static/media/about-img1.jpg": "/TheBartendersProject/static/media/about-img1.cebdb190435dd64df79d.jpg",
+    "index.html": "/TheBartendersProject/index.html",
+    "main.44238dbd.css.map": "/TheBartendersProject/static/css/main.44238dbd.css.map",
+    "main.6623c36c.js.map": "/TheBartendersProject/static/js/main.6623c36c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44238dbd.css",
+    "static/js/main.6623c36c.js"
+  ]
+}
